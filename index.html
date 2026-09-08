@@ -88,6 +88,33 @@
     gap:10px;
     margin-top:24px;
   }
+  .personal-contact{
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .personal-contact-item{
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--text-dim);
+    text-decoration:none;
+    padding:9px 12px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:var(--surface);
+  }
+  .personal-contact-item svg{
+    width:13px;
+    height:13px;
+    flex-shrink:0;
+  }
+  .personal-contact-item:hover{color:var(--accent);border-color:var(--accent);}
   button, .btn{
     font-family:var(--mono);
     font-size:14px;
@@ -252,6 +279,8 @@
   @media (min-width:540px){
     .cta-row{flex-direction:row;flex-wrap:wrap;}
     button,.btn{width:auto;}
+    .personal-contact{flex-direction:row;}
+    .personal-contact-item{width:auto;}
   }
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -264,9 +293,18 @@
     <div class="location">Bangalore, IN &rarr; Luxembourg, Sept 2026</div>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:olichk2004@gmail.com" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>Email</a>
-      <button class="btn" id="saveContact"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Save my contact</button>
+      <button class="btn btn-primary" id="saveContact"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Save my contact</button>
       <a class="btn" id="downloadResume" href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M5 21h14"></path></svg>Download resume</a>
+    </div>
+    <div class="personal-contact">
+      <a class="personal-contact-item" href="mailto:olichk2004@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        olichk2004@gmail.com
+      </a>
+      <a class="personal-contact-item" href="tel:+917003091262">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        +91 70030 91262
+      </a>
     </div>
     <div class="status-note" id="statusNote"></div>
   </header>
@@ -280,14 +318,6 @@
       </a>
       <a class="ledger-row" href="https://github.com/dataoli22" target="_blank" rel="noopener">
         <div class="ledger-left"><div class="ledger-title">GitHub</div><div class="ledger-sub">@dataoli22</div></div>
-        <div class="ledger-arrow">&#8599;</div>
-      </a>
-      <a class="ledger-row" href="tel:+917003091262" target="_blank" rel="noopener">
-        <div class="ledger-left"><div class="ledger-title">Phone</div><div class="ledger-sub">+91 70030 91262</div></div>
-        <div class="ledger-arrow">&#8599;</div>
-      </a>
-      <a class="ledger-row" href="mailto:olichk2004@gmail.com" target="_blank" rel="noopener">
-        <div class="ledger-left"><div class="ledger-title">Email</div><div class="ledger-sub">olichk2004@gmail.com</div></div>
         <div class="ledger-arrow">&#8599;</div>
       </a>
     </div>
@@ -401,7 +431,8 @@
     "ORG:Ventra",
     "TITLE:Decision Science Associate; building Ventra",
     "TEL;TYPE=CELL:+917003091262",
-    "EMAIL;TYPE=INTERNET:olichk2004@gmail.com",
+    "EMAIL;TYPE=HOME:olichk2004@gmail.com",
+    "EMAIL;TYPE=WORK:olipriya.chakraborty.001@student.ui.lu",
     "URL:https://www.linkedin.com/in/olipriya-chakraborty-52a7631b5/",
     "NOTE:Incoming MSc Finance & Economics, University of Luxembourg (Sept 2026)",
     "END:VCARD"
